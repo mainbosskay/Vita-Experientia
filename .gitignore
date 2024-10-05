@@ -1,0 +1,30 @@
+# Ignore backend virtual environment
+venv/
+
+# Ignore backend environment local file for environment configuration
+.env.local
+
+# Ignore Google API credentials and token in root directory
+credentials.json
+token.json
+
+# Ignore vscode dir and settings
+.vscode/
+
+# Ignore all .DS_Store files
+.DS_Store
+
+#Ignore Byte-compiled / optimized / DLI file(s)
+__pycache__/
+
+#Ignore app_key file
+key.py
+
+#Ignore database population file
+populate_data.py
+
+#Ignore database export script
+export_data.py
+
+#skip directory for exported CSV file
+export_data/
