@@ -28,5 +28,6 @@ python3 -m api.v1.server
 #   IMG_PRIV_KEY="${ENV_VARS['IMG_PRIV_KEY']}" \
 #	IMG_URL_ENDPNT="${ENV_VARS['IMG_URL_ENDPNT']}" \
 #	GMAIL_SENDER="${ENV_VARS['GMAIL_SENDER']}" \
+#   FRONTEND_DOMAIN="${ENV_VARS['FRONTEND_DOMAIN']}" \
 #	APP_SECRET_KEY="${ENV_VARS['APP_SECRET_KEY']}" \
 #	python3 -m api.v1.server
