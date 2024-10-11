@@ -77,3 +77,5 @@ async def get_profile_picture(imge_id: str):
             'success': False,
             'message': str(exp)
         }
+        # print(f"Error: {exp}")
+    return api_response
