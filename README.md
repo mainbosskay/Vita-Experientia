@@ -15,7 +15,7 @@ My aim is to develop a platform that allows users to share both positive and cha
 
 ## How It Works
 
-![Vita Experientia Architecture](VE_Backend_Project_Architecture.svg)
+![Vita Experientia Architecture](vitaE_Backend_Project_Architecture.svg)
 
 Vita Experientia consists of the following components:
 
@@ -26,7 +26,7 @@ Vita Experientia consists of the following components:
 
 ### APIs
 + **Google API** : Created with at least an email sending scope and the API server's root URL as one of the redirect URIs, from which the `credentials.json` and `token.json` files are generated.
-+ **ImageKit.io API**: Used for CDN management. The public key, private key, and URL endpoint are saved in the `.env.local` file located in the [Project Main Directory](va_backend/)
++ **ImageKit.io API**: Used for CDN management. The public key, private key, and URL endpoint are saved in the `.env.local` file located in the [Project Main Directory](vitaE_Backend/)
 
 ### Environment Variables
 
@@ -36,9 +36,9 @@ The environment variables required for this project are stored in the `.env.loca
 |:-|:-|
 | DATABASE_URL | The URL of the PostgreSQL database to connect to. |
 | APP_MAX_SIGNIN | The maximum number of sign in attempts a user can make in succession. |
-| IMG_CDN_PUB_KEY | Imagekit.io public key. |
-| IMG_CDN_PRIV_KEY | Imagekit.io private key. |
-| IMG_CDN_URL_ENDPNT | Imagekit.io url endpoint. |
+| IMG_PUB_KEY | Imagekit.io public key. |
+| IMG_PRIV_KEY | Imagekit.io private key. |
+| IMG_URL_ENDPNT | Imagekit.io url endpoint. |
 | GMAIL_SENDER | The email address of the account responsible for sending emails to users. |
 | APP_SECRET_KEY | The secret key for this application. |
 
@@ -49,9 +49,9 @@ The environment variables required for this project are stored in the `.env.loca
 git clone https://github.com/mainbosskay/Vita-Experientia.git
 ```
 
-+ **Navigate to the `ve_backend` directory:**
++ **Navigate to the `vitaE_Backend` directory:**
 ```zsh
-cd ve_backend
+cd vitaE_Backend
 ```
 
 + **Create the environment variables mentioned above**
@@ -120,7 +120,7 @@ The `OpenAPI` documentation for the project is available in [OpenAPI.json](OpenA
 
 ## Discussion
 
-Discuss Vita Experientia on [VE Discussions](https://github.com/mainbosskay/Vita Experientia)
+Discuss Vita Experientia on [VE Discussions](https://github.com/mainbosskay/Vita-Experientia)
 
 ## Contributing
 
