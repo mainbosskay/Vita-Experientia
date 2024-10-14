@@ -21,4 +21,3 @@ class PostLike(BaseModel, Base):
                         default=datetime.utcnow())
     post_id = Column(String(64), ForeignKey('posts.id'), nullable=False)
     user_id = Column(String(64), ForeignKey('users.id'), nullable=False)
-    
