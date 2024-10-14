@@ -33,7 +33,7 @@ async def sign_in(body: SignInModel):
     db_session = get_session()
     try:
         email_validator.validate_email(body.email)
-        user = db_session.quert(User).filter(User.email == body.email).first()
+        user = db_session.query(User).filter(User.email == body.email).first()
         if user:
             max_login_attempts = int(os.getenv('APP_MAX_SIGNIN'))
             try:
@@ -46,7 +46,7 @@ async def sign_in(body: SignInModel):
                         user.email == body.email
                     ).update(
                         {
-                            User.updated_on: datetime.utcnow()
+                            User.updated_on: datetime.utcnow(),
                             User.signin_attempts: 1
                         },
                         synchronize_session=False
@@ -73,7 +73,7 @@ async def sign_in(body: SignInModel):
                     {
                         User.updated_on: datetime.utcnow(),
                         User.signin_attempts: user.signin_attempts + 1,
-                        User.user_active: active_ccount
+                        User.user_active: active_account
                     },
                     synchronize_session=False
                 )
@@ -200,12 +200,12 @@ async def request_reset_password(body: PasswordResetRequestModel):
                     token=reset_token_str
                 )
             )
-        except Exception as ex:
-            print(ex.args[0])
-            db_session.rollback()
-        finally:
-            db_session.close()
-        return api_response
+    except Exception as ex:
+        print(ex.args[0])
+        db_session.rollback()
+    finally:
+        db_session.close()
+    return api_response
 
 
 @endpoint.put('/reset-password')
