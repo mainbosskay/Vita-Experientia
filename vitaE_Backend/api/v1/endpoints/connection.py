@@ -32,7 +32,7 @@ async def get_user_followers(id='', token='', span='12', after='', before=''):
         if span and re.fullmatch(r'\d+', span) is None:
             api_response = {
                 'success': False,
-                'message': 'Invalid span type.'   
+                'message': 'Invalid span type.'
             }
             db_sesion.close()
             return api_response
