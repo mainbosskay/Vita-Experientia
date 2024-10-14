@@ -41,7 +41,7 @@ async def get_profile_picture(imge_id: str):
     imagekit = ImageKit(
         private_key=os.getenv('IMG_PRIV_KEY'),
         public_key=os.getenv('IMG_PUB_KEY'),
-        endpoint_url=os.getenv('IMG_URL_ENDPNT')
+        url_endpoint=os.getenv('IMG_URL_ENDPNT')
     )
     api_response = {
         'success': False,
