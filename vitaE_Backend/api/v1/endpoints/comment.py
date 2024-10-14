@@ -15,7 +15,7 @@ from ..utils.token_management import AuthTokenMngr
 endpoint = APIRouter(prefix='/api/v1')
 
 
-@endpooint.get('/comment')
+@endpoint.get('/comment')
 async def get_comment(id=''):
     """Create and return details if a certain comment"""
     api_response = {

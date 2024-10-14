@@ -136,7 +136,7 @@ async def get_user_followings(id='', token='', span='12', after='', before=''):
 
 
 @endpoint.put('/follow')
-async def toggle_user_follow(body: ConnectionSchema):
+async def toggle_user_follow(body: ConnectionModel):
     """Switch the follow status between two users"""
     api_response = {
         'success': False,
