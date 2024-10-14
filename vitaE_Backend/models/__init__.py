@@ -28,4 +28,4 @@ def create_vectorts(*columns):
     vectorts_exp = columns[0]
     for col in columns[1:]:
         vectorts_exp = func.concat(vectorts_exp, ' ', col)
-    return func.to_vectorts(text("'english'"), vectorts_exp)
+    return func.to_tsvector(text("'english'"), vectorts_exp)
