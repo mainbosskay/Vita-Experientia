@@ -17,7 +17,7 @@ class SignUpModel(BaseModel):
     password: str
 
 
-class PasswordReserRequestModel(BaseModel):
+class PasswordResetRequestModel(BaseModel):
     """Model for password reset requests"""
     email: str
 
