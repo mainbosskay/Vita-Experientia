@@ -19,3 +19,6 @@ __pycache__/
 
 # Ignore key.py file for APP secret key
 key.py
+
+# Ignore population file database
+populate_data.py
