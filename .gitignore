@@ -16,3 +16,6 @@ token.json
 
 # Ignore Byte-compiled / optimized / DLI file(s)
 __pycache__/
+
+# Ignore key.py file for APP secret key
+key.py
