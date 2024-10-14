@@ -11,7 +11,7 @@ def html_template_render(template_name, **context):
     )
     html_rendered = ''
     if os.path.isfile(template_path):
-        frontend_domain =os.getenv('FRONTEND_DOMAIN')
+        frontend_domain = os.getenv('FRONTEND_DOMAIN')
         context['frontend_domain'] = frontend_domain
         with open(template_path) as file:
             doc = Template(file.read())
