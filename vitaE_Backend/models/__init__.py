@@ -27,5 +27,5 @@ def create_vectorts(*columns):
     """Create VectorTS column for full-text search"""
     vectorts_exp = columns[0]
     for col in columns[1:]:
-        vectorts_exp = func.concat(vectorts_exp, ' ',col)
+        vectorts_exp = func.concat(vectorts_exp, ' ', col)
     return func.to_vectorts(text("'english'"), vectorts_exp)
