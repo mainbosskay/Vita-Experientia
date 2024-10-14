@@ -168,7 +168,7 @@ async def request_reset_password(body: PasswordResetRequestModel):
     try:
         email_validator.validate_email(body.email)
         queryres = db_session.query(User).filter(
-            User.email ==body.email
+            User.email == body.email
         ).first()
         if queryres:
             reset_token = ResetTokenMngr(
@@ -230,7 +230,7 @@ async def reset_password(body: PasswordResetModel):
                 'message': 'Reset password token has expired.'
             }
             return api_response
-        valid_condts [
+        valid_condts[
             reset_token.email == body.email,
             len(body.password.strip()) > 8,
             reset_token.message == 'password_reset'
