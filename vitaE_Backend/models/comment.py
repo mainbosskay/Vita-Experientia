@@ -10,7 +10,7 @@ class Comment(Base):
     """Comment model class for posts or replys of comment"""
     __tablename__ = 'comments'
     id = Column(String(64), unique=True, nullable=False, primary_key=True)
-    created_on = Column(TIMESTAMP(True), nullale=False,
+    created_on = Column(TIMESTAMP(True), nullable=False,
                         default=datetime.utcnow())
     post_id = Column(String(64), ForeignKey('posts.id'), nullable=False)
     user_id = Column(String(64), ForeignKey('users.id'), nullable=False)

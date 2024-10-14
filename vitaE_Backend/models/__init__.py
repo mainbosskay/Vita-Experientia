@@ -3,7 +3,7 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, TIMESTAMP, String
 from sqlalchemy.sql import func, text
-from datetime import datatime
+from datetime import datetime
 
 
 Base = declarative_base()

@@ -11,9 +11,9 @@ from . import Base, BaseModel, create_vectorts
 class Post(BaseModel, Base):
     """Post model for database representation"""
     __tablename__ = 'posts'
-    user_id = Column(String(64), ForeignKay('user.id'), nullable=False)
+    user_id = Column(String(64), ForeignKey('user.id'), nullable=False)
     title = Column(String(256), nullable=False, default='', index=True)
-    content = Column(TEXT, nullable=FALSE, index=TRUE)
+    content = Column(TEXT, nullable=False, index=True)
     comments = relationship('Comment', cascade='all, delete, delete-orphan',
                             backref='post')
     likes = relationship('PostLike', cascade='all, delete, delete-orphan',
@@ -24,5 +24,5 @@ class Post(BaseModel, Base):
         cast(func.coalesce(title, ''), postgresql.TEXT))
     __TABLE_ARGS__ = (
         Index('indx_vts_post_text', __content_ts__, postgresql_using='gin'),
-        Index('indx_vts_post_title', __titls_ts__, postgresql_using='gin')
+        Index('indx_vts_post_title', __title_ts__, postgresql_using='gin')
     )
