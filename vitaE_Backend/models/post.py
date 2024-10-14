@@ -11,7 +11,7 @@ from . import Base, BaseModel, create_vectorts
 class Post(BaseModel, Base):
     """Post model for database representation"""
     __tablename__ = 'posts'
-    user_id = Column(String(64), ForeignKey('user.id'), nullable=False)
+    user_id = Column(String(64), ForeignKey('users.id'), nullable=False)
     title = Column(String(256), nullable=False, default='', index=True)
     content = Column(TEXT, nullable=False, index=True)
     comments = relationship('Comment', cascade='all, delete, delete-orphan',
