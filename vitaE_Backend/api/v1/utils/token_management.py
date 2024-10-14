@@ -43,7 +43,7 @@ class AuthTokenMngr:
             self.__email = value
         else:
             raise TypeError('Invalid Type.')
-    
+
     @property
     def secure_text(self):
         """Create secure_text for AuthTokenMngr"""
