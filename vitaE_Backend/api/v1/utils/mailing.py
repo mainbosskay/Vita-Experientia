@@ -53,7 +53,7 @@ def send_email(service, message):
         service = build('gmail', 'v1', credentials=gmail_credn)
         message = (service.users().messages().send(userId='me', body=message)
                    .execute())
-        print(f'Message Id: {message['id']}')
+        print(f"Message Id: {message['id']}")
         return message
     except HttpError as error:
         print(f'An error occured: {error}')
