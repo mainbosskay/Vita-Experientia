@@ -28,7 +28,7 @@ async def handler_exceptions(request, exc):
 
 
 app.add_exception_handler(StarletteHTTPException, handler_exceptions)
-app.add_exception_handler(RequestValidationEror, handler_exceprions)
+app.add_exception_handler(RequestValidationError, handler_exceptions)
 app.add_exception_handler(Exception, handler_exceptions)
 
 
