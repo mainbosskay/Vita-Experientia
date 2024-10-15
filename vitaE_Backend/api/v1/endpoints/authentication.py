@@ -57,7 +57,7 @@ async def sign_in(body: SignInModel):
                     email=user.email,
                     secure_text=user.hashed_password
                 )
-                api.response = {
+                api_response = {
                     'success': True,
                     'data': {
                         'userId': user.id,
