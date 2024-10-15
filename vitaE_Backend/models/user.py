@@ -16,7 +16,7 @@ class User(BaseModel, Base):
     bio = Column(String(384), default='')
     profile_picture_id = Column(TEXT, nullable=False, default='')
     hashed_password = Column(TEXT, nullable=False)
-    signin_trials = Column(Integer, nullable=False, default=0)
+    signin_attempts = Column(Integer, nullable=False, default=0)
     user_active = Column(Boolean, default=True)
     user_reset_token = Column(TEXT, nullable=True, default='')
     posts = relationship('Post', cascade='all, delete, delete-orphan',
