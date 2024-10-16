@@ -172,7 +172,7 @@ async def request_reset_password(body: PasswordResetRequestModel):
         ).first()
         if queryres:
             reset_token = ResetTokenMngr(
-                user_id=quesryres.id,
+                user_id=queryres.id,
                 email=body.email,
                 message='password_reset'
             )
