@@ -107,7 +107,7 @@ async def sign_up(body: SignUpModel):
         if len(body.name) > 64:
             api_response['message'] = 'User name is too long.'
             return api_response
-        db_session = get_seesion()
+        db_session = get_session()
         hashpwd = argon2.PasswordHasher()
         try:
             deliver_message(
