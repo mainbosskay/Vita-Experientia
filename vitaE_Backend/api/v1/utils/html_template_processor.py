@@ -7,7 +7,7 @@ from jinja2 import Template
 def html_template_render(template_name, **context):
     """Create HTML string based on template and context"""
     template_path = os.path.join(
-        'api', 'v1', 'templates', f'{template_names}.html'
+        'api', 'v1', 'templates', f'{template_name}.html'
     )
     html_rendered = ''
     if os.path.isfile(template_path):
