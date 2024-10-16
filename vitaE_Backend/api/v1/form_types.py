@@ -91,7 +91,7 @@ class CommentAddModel(BaseModel):
     userId: str
     postId: str
     content: str
-    replyT0: Optional[str]
+    replyTo: Optional[str]
 
 
 class CommentDeleteModel(BaseModel):
