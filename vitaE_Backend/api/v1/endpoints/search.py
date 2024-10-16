@@ -53,7 +53,7 @@ def unique_posts(
             'id': post.id,
             'title': post.title,
             'publishedOn': post.created_on.isoformat(),
-            'quotes': json.JSONDecoder().decode(post.content),
+            'stories': post.content,
             'commentsCount': comment_count,
             'likesCount': like_count,
             'isLiked': is_liked_by_user
