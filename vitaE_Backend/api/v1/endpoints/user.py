@@ -152,7 +152,7 @@ async def update_user_info(body: UserUpdateModel):
         api_response = {
             'success': True,
             'data': {
-                'authToken': AuthTokenMngr.deconvert_token(new_auth_token),
+                'authToken': AuthTokenMngr.encode_token(new_auth_token),
                 'profilePictureId': profile_pic_file_id
             }
         }
