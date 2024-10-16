@@ -59,7 +59,7 @@ class PostAddModel(BaseModel):
     authToken: str
     userId: str
     title: str
-    quotes: List[str]
+    stories: List[str]
 
 
 class PostUpdateModel(BaseModel):
@@ -68,7 +68,7 @@ class PostUpdateModel(BaseModel):
     userId: str
     postId: str
     title: str
-    quotes: List[str]
+    stories: List[str]
 
 
 class PostDeleteModel(BaseModel):
