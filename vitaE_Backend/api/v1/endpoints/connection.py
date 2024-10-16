@@ -28,7 +28,7 @@ async def get_user_followers(id='', token='', span='12', after='', before=''):
     currntuser_id = auth_token.user_id if auth_token else None
     db_session = get_session()
     try:
-        span = span.stip()
+        span = span.strip()
         if span and re.fullmatch(r'\d+', span) is None:
             api_response = {
                 'success': False,
@@ -108,7 +108,7 @@ async def get_user_followings(id='', token='', span='12', after='', before=''):
                 ).first()
                 if not user:
                     continue
-                curntruserctn = db_session.query(UserFollowing).filter(and_(
+                currntuserctn = db_session.query(UserFollowing).filter(and_(
                     UserFollowing.follower_id == currntuser_id,
                     UserFollowing.following_id == user.id
                 )).first()
@@ -116,7 +116,7 @@ async def get_user_followings(id='', token='', span='12', after='', before=''):
                     'id': user.id,
                     'name': user.name,
                     'profilePictureId': user.profile_picture_id,
-                    'isFollowing': currusrctn is not None
+                    'isFollowing': currntuserctn is not None
                 }
                 userflwgs_data.append(following_info)
         api_response = {
