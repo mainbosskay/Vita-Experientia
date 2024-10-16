@@ -22,7 +22,7 @@ class Post(BaseModel, Base):
         cast(func.coalesce(content, ''), postgresql.TEXT))
     __title_ts__ = create_vectorts(
         cast(func.coalesce(title, ''), postgresql.TEXT))
-    __TABLE_ARGS__ = (
+    __table_args__ = (
         Index('indx_vts_post_text', __content_ts__, postgresql_using='gin'),
         Index('indx_vts_post_title', __title_ts__, postgresql_using='gin')
     )
