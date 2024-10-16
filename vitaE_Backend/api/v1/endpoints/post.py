@@ -64,7 +64,7 @@ async def get_post(id: str, token: str):
                     },
                     'title': post.title,
                     'publishedOn': post.created_on.isoformat(),
-                    'quotes': json.JSONDecoder().decode(post.content),
+                    'story': json.JSONDecoder().decode(post.content),
                     'commentsCount': comment_count,
                     'likesCount': like_count,
                     'isLiked': is_liked_by_user
@@ -325,7 +325,7 @@ async def get_users_posts(userId, token='', span='', after='', before=''):
                     },
                     'title': post.title,
                     'publishedOn': post.created_on.isoformat(),
-                    'qoutes': json.JSONDecoder().decode(post.content),
+                    'story': json.JSONDecoder().decode(post.content),
                     'commentsCount': comment_count,
                     'likesCount': like_count,
                     'isLiked': is_liked_by_user
@@ -412,7 +412,7 @@ async def get_liked_posts(userId, token='', span='', after='', before=''):
                 },
                 'title': post.title,
                 'publishedOn': post.created_on.isoformat(),
-                'quotes': json.JSONDecoder().decode(post.content),
+                'story': json.JSONDecoder().decode(post.content),
                 'commentsCount': comment_count,
                 'likesCount': like_count,
                 'isLiked': is_liked_by_user
@@ -505,7 +505,7 @@ async def get_feed_posts(token, span='', after='', before=''):
                     },
                     'title': post.title,
                     'publishedOn': post.created_on.isoformat(),
-                    'quotes': json.JSONDecoder().decode(post.content),
+                    'story': json.JSONDecoder().decode(post.content),
                     'commentsCount': comment_count,
                     'likesCount': like_count,
                     'isLiked': is_liked_by_user
@@ -597,7 +597,7 @@ async def get_exploratory_posts(token, span='', after='', before=''):
                 },
                 'title': post.title,
                 'publishedOn': post.created_on.isoformat(),
-                'quotes': json.JSONDecoder().decode(post.content),
+                'story': json.JSONDecoder().decode(post.content),
                 'commentsCount': comment_count,
                 'likesCount': like_count,
                 'isLiked': is_liked_by_user
